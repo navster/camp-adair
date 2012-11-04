@@ -1,0 +1,17 @@
+---
+applications:
+  .:
+    name: campAdair
+    framework:
+      name: php
+      info:
+        mem: 128M
+        description: PHP Application
+        exec: 
+    infra: ap-aws
+    url: ${name}.${target-base}
+    mem: '128'
+    instances: 1
+    services:
+      mysql:
+        type: mysql
