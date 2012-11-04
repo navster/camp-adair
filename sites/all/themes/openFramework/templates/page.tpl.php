@@ -64,7 +64,7 @@
 <?php if ($main_menu): ?>
 <div id="main-menu" class="clearfix">
   <div class="container">
-    <div class="navbar">
+    <div class="navbar navbar-inverse">
       <div class="navbar-inner">
         <?php if ($search): ?>
         <div id="nav-search">
