@@ -20,23 +20,20 @@
 <div id="main" class="clearfix">
   <div class="container">
     <div class="row">
-      <div class="<?php if (($search)): print 'span8'; else: print 'span12'; endif; ?>">
-        <?php if ($logo): ?>
-        <div id="logo"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" role="presentation" /> </a></div>
-        <!-- /#logo -->
-        <?php endif; ?>
-        <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
-          <?php if ($site_slogan): ?>
-          <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
+      <div class="span12">
+        <div id="myCarousel" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item">…</div>
+            <div class="item"><img src="http://placekitten.com/1000/300"/></div>
+            <div class="item"><img src="http://placekitten.com/1000/300"/></div>
+            <div class="item"><img src="http://placekitten.com/1000/300"/></div>
+            <div class="item"><img src="http://placekitten.com/1000/300"/></div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
         </div>
-        <!-- /#name-and-slogan -->
-        <?php endif; ?>
-        <?php if ($page['header']): ?>
-        <div id="header-content" class="row-fluid"><?php print render($page['header']); ?></div>
-        <!-- /#header-content -->
-        <?php endif; ?>
       </div>
     </div>    
     <div id="main-content" class="row">

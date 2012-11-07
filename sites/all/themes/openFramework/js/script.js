@@ -12,6 +12,8 @@ $(document).ready(function(){
 	$('#main-menu ul li').removeClass('expanded collapsed leaf');
 	$('#main-menu ul li:has(.active)').addClass('active');
 	$('#main-menu ul.nav > li > a.dropdown-toggle').append(' <b class="caret"></b>');
+
+	$('.carousel').carousel();
 });
 
 
