@@ -201,20 +201,16 @@
  * @endcode
  */
 
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'drupal1',
-      'username' => 'root',
-      'password' => 'root',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
+$services = getenv('VCAP_SERVICES'); 
+$services_json = json_decode($services,true); 
+$mysql_config = $services_json["mysql-5.1"][0]["credentials"]; 
+$databases['default']['default'] = array(
+  'driver' => 'mysql',
+  'database' => $mysql_config["name"],
+  'username' => $mysql_config["user"],
+  'password' => $mysql_config["password"],
+  'host' => $mysql_config["hostname"],
+  'port' => $mysql_config["port"],
 );
 
 /**
