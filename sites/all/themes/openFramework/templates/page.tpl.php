@@ -1,15 +1,21 @@
-<div id="skipnav" class="">
-  <div class="container">
-    <p>Skip to:</p>
-    <ul>
-      <li><a href="#content" class="element-invisible element-focusable"><?php print t('Skip to content'); ?></a></li>
-      <?php if ($main_menu): ?>
-      <li><a href="#main-menu" class="element-invisible element-focusable"><?php print t('Skip to navigation'); ?></a></li>
-      <?php endif; ?>
-    </ul>
-  </div>
-</div>
-<!-- /#skipnav -->
+<?php if ($main_menu): ?>
+<div id="main-menu" class="clearfix">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class='container'>
+        <?php if ($search): ?>
+        <div id="nav-search">
+          <?php if ($search): print render($search); endif; ?>
+        </div>
+        <?php endif; ?>
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+        <div class="nav-collapse"><?php print render($main_menu_expanded); ?></div>
+      </div><!-- /.container -->
+    </div><!-- /.navbar-inner -->
+  </div><!-- /.navbar -->
+</div><!-- /#main-menu -->
+<?php endif; ?>
+
 <?php if ($logo || $site_name || $site_slogan || ($page['header']) || ($page['navigation']) || ($search)): ?>
 <div id="header" class="clearfix">
   <div class="container">
@@ -35,49 +41,10 @@
         <!-- /#header-content -->
         <?php endif; ?>
       </div>
-      <?php if (($secondary_menu) || ($page['navigation'])): ?>
-      <div id="navigation" class="span4">
-        <?php if ($secondary_menu): ?>
-        <div id="secondary-menu" class="navigation">
-          <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => array(
-            'id' => 'secondary-menu-links',
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => t('Secondary menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-        </div>
-        <!-- /#secondary-menu -->
-        <?php endif; ?>
-        <?php print render($page['navigation']); ?> </div>
-      <?php endif; ?>
     </div>
   </div>
 </div>
 <!-- /#header -->
-<?php endif; ?>
-<?php if ($main_menu): ?>
-<div id="main-menu" class="clearfix">
-  <div class="container">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <?php if ($search): ?>
-        <div id="nav-search">
-          <?php if ($search): print render($search); endif; ?>
-        </div>
-        <?php endif; ?>
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-        <div class="nav-collapse"><?php print render($main_menu_expanded); ?></div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /#main-menu -->
 <?php endif; ?>
 <div id="main" class="clearfix">
   <div class="container">

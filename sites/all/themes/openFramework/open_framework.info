@@ -12,7 +12,6 @@ scripts[] = js/open_framework.js
 scripts[] = js/script.js
 
 regions[header] = Header
-regions[navigation] = Navigation
 regions[highlighted] = Highlighted
 regions[help] = Help
 regions[sidebar_first] = First sidebar
