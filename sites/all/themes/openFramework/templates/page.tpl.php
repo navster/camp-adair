@@ -1,4 +1,4 @@
-<div id="skipnav" class="element-invisible">
+<div id="skipnav" class="">
   <div class="container">
     <p>Skip to:</p>
     <ul>
