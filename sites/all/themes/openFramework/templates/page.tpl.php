@@ -20,7 +20,7 @@
 <div id="header" class="clearfix">
   <div class="container">
     <div class="row">
-      <div class="<?php if (($page['navigation']) || ($search)): print 'span8'; else: print 'span12'; endif; ?>">
+      <div class="<?php if (($search)): print 'span8'; else: print 'span12'; endif; ?>">
         <?php if ($logo): ?>
         <div id="logo"> <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" role="presentation" /> </a></div>
         <!-- /#logo -->
@@ -90,23 +90,6 @@
           <?php endif; ?>
           <?php if (($page['content']) || ($feed_icons)): ?>
           <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
-          <?php endif; ?>
-          <?php if ($page['content_row2']): ?>
-          <div id="content-row2" class="row-fluid"> <?php print render($page['content_row2']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content_col2-1']) || ($page['content_col2-2'])): ?>
-          <div id="content-col2" class="row-fluid">
-            <?php if ($page['content_col2-1']): ?>
-            <div class="span6">
-              <div id="content-col2-1" class="span12 clearfix clear-row"> <?php print render($page['content_col2-1']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col2-2']): ?>
-            <div class="span6">
-              <div id="content-col2-2" class="span12 clearfix clear-row"> <?php print render($page['content_col2-2']); ?> </div>
-            </div>
-            <?php endif; ?>
-          </div>
           <?php endif; ?>
           <?php if ($page['content_row3']): ?>
           <div id="content-row3" class="row-fluid"> <?php print render($page['content_row3']); ?> </div>
