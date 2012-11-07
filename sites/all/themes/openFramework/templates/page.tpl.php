@@ -3,6 +3,7 @@
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class='container'>
+        <a class='brand' href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
         <?php if ($search): ?>
         <div id="nav-search">
           <?php if ($search): print render($search); endif; ?>
@@ -26,9 +27,6 @@
         <?php endif; ?>
         <?php if ($site_name || $site_slogan): ?>
         <div id="name-and-slogan">
-          <?php if ($site_name): ?>
-          <div id="site-name"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></div>
-          <?php endif; ?>
           <?php if ($site_slogan): ?>
           <div id="site-slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>
