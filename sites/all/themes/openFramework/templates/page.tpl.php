@@ -24,11 +24,11 @@
         <div id="myCarousel" class="carousel slide">
           <!-- Carousel items -->
           <div class="carousel-inner">
-            <div class="active item">…</div>
-            <div class="item"><img src="http://placekitten.com/1000/300"/></div>
-            <div class="item"><img src="http://placekitten.com/1000/300"/></div>
-            <div class="item"><img src="http://placekitten.com/1000/300"/></div>
-            <div class="item"><img src="http://placekitten.com/1000/300"/></div>
+            <div class="active item"><img src="http://placekitten.com/1170/300"/></div>
+            <div class="item"><img src="http://placekitten.com/1170/300"/></div>
+            <div class="item"><img src="http://placekitten.com/1170/300"/></div>
+            <div class="item"><img src="http://placekitten.com/1170/300"/></div>
+            <div class="item"><img src="http://placekitten.com/1170/300"/></div>
           </div>
           <!-- Carousel nav -->
           <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>

@@ -4993,3 +4993,10 @@ body {
 #main {
   padding-top: 60px;
 }
+#main .container {
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+.container {
+  background: white;
+  padding: 10px;
+}
