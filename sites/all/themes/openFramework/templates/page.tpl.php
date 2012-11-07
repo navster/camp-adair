@@ -16,8 +16,7 @@
 </div><!-- /#main-menu -->
 <?php endif; ?>
 
-<?php if ($logo || $site_name || $site_slogan || ($page['header']) || ($search)): ?>
-<div id="header" class="clearfix">
+<div id="main" class="clearfix">
   <div class="container">
     <div class="row">
       <div class="<?php if (($search)): print 'span8'; else: print 'span12'; endif; ?>">
@@ -41,16 +40,7 @@
         <!-- /#header-content -->
         <?php endif; ?>
       </div>
-    </div>
-  </div>
-</div>
-<!-- /#header -->
-<?php endif; ?>
-<div id="main" class="clearfix">
-  <div class="container">
-    <?php if ($breadcrumb): ?>
-    <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
+    </div>    
     <div id="main-content" class="row">
       <?php if ($page['sidebar_first']): ?>
       <div id="sidebar-first" class="sidebar span3">
