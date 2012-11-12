@@ -14,7 +14,8 @@ if wasGood
   puts "Great that worked. Now lets run a few git commands and push to remote\n"
   puts "Enter your commit message:"
   commit = gets.chomp
-  cmd = "cd ../ && git add . && git commit -a -m '#{commit}' && push origin master && cd customScripts"
+  system('cd ..')
+  cmd = "git add . && git commit -a -m '#{commit}' && push origin master"
   exec(cmd)
 else
   puts "Failed for whatever reason. Check that you can run mysqldump manually like so:\nmysqldump --add-drop-table -h #{host} -u #{user} -p #{db} > ../db_export.sql"
