@@ -39,12 +39,6 @@
       </div>
     </div>    
     <div id="main-content" class="row">
-      <?php if ($page['sidebar_first']): ?>
-      <div id="sidebar-first" class="sidebar span3">
-        <div class="row-fluid"><?php print render($page['sidebar_first']); ?></div>
-      </div>
-      <!-- /#sidebar-first -->
-      <?php endif; ?>
       <div id="content" class="<?php if (($page['sidebar_first']) && ($page['sidebar_second'])): print 'span6'; elseif (($page['sidebar_first']) || ($page['sidebar_second'])): print 'span9'; else: print 'span12'; endif; ?>">
         <div id="content-wrapper">
           <div id="content-head" class="row-fluid">
@@ -69,8 +63,8 @@
             </ul>
             <?php endif; ?>
           </div>
-          <?php if (($page['content']) : ?>
-          <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
+          <?php if (($page['content'])): ?>
+          <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?></div>
           <?php endif; ?>
         </div>
         <!-- /#content-wrap -->
@@ -86,11 +80,10 @@
   </div>
 </div>
 <!-- /#main, /#main-wrapper -->
-<?php if ($page['footer']): ?>
+
 <div id="footer" class="clearfix">
   <div class="container">
-    <div id="footer-content" class="row-fluid"> <?php print render($page['footer']); ?> </div>
+    <div id="footer-content" class="row-fluid"> <?php //print render($page['footer']); ?> </div>
   </div>
 </div>
 <!-- /#footer -->
-<?php endif; ?>

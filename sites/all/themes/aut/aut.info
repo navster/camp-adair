@@ -1,7 +1,7 @@
 name = AUT Project
 description = AUT R and D Project theme for Camp Adair.
 core = 7.x
-version = 1.0
+version = 2.0
 
 stylesheets[all][] = stylesheets/app.css
 scripts[] = javascripts/foundation/modernizr.foundation.js
@@ -27,3 +27,4 @@ scripts[] = javascripts/foundation/jquery.placeholder.js
 scripts[] = javascripts/foundation/app.js
 
 regions[sidebar] = Sidebar
+regions[content] = Content: Body
