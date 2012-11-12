@@ -1,3 +1,5 @@
+<div class='row' id='wrapper'>
+<div class='twelve columns'>
   <div class='row'>
     <div class="twelve columns">
       <nav class="top-bar">
@@ -37,10 +39,9 @@
     </div>
   </div>  
 
-<div id="main" class="clearfix">
-  <div class="container">
-    <div id="main-content" class="row">
-      <div id="content">
+  <div class='row' id='main'>
+    
+      <div class='eight columns'id="content">
         <div id="content-wrapper">
           <div id="content-head" class="row-fluid">
             <div id="highlighted" class="clearfix"><?php print render($page['highlighted']); ?></div>
@@ -68,17 +69,14 @@
         <!-- /#content-wrap -->
       </div>
       <!-- /#content -->
-      <?php if ($page['sidebar']): ?>
-      <div id="sidebar-second" class="sidebar span3">
+
+      <div id="sidebar" class="three columns">
         <div class="row-fluid"><?php print render($page['sidebar']); ?></div>
       </div>
-      <!-- /#sidebar-second -->
-      <?php endif; ?>
-    </div>
+      <!-- /#sidebar -->
   </div>
 </div>
-<!-- /#main, /#main-wrapper -->
-
+</div>
 <div id="footer" class="clearfix">
   <div class="container">
     <div id="footer-content" class="row-fluid"> <?php //print render($page['footer']); ?> </div>

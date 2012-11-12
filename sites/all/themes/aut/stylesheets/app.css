@@ -5877,3 +5877,54 @@ table.hide-for-medium {
     width: 100%;
   }
 }
+/* line 49, ../sass/app.scss */
+body {
+  background: url("../images/retina_wood.png") repeat;
+}
+
+/* line 52, ../sass/app.scss */
+#wrapper {
+  background: #eee;
+}
+
+/* line 57, ../sass/app.scss */
+div.orbit-wrapper span.rotator {
+  background: url("../images/foundation/orbit/rotator-black.png") no-repeat;
+}
+
+/* line 61, ../sass/app.scss */
+div.orbit-wrapper span.mask.move {
+  background: url("../images/foundation/orbit/timer-black.png") repeat 0 0;
+}
+
+/* line 65, ../sass/app.scss */
+div.orbit-wrapper span.pause {
+  background: url("../images/foundation/orbit/pause-black.png") no-repeat;
+}
+
+/* line 69, ../sass/app.scss */
+div.orbit-wrapper span.pause.active {
+  background: url("../images/foundation/orbit/pause-black.png") no-repeat 0 -40px;
+}
+
+/* line 73, ../sass/app.scss */
+div.orbit-wrapper div.slider-nav span.right {
+  background: url("../images/foundation/orbit/right-arrow.png");
+  background-size: 100%;
+}
+
+/* line 78, ../sass/app.scss */
+div.orbit-wrapper div.slider-nav span.left {
+  background: url("../images/foundation/orbit/left-arrow.png");
+  background-size: 100%;
+}
+
+/* line 83, ../sass/app.scss */
+.lt-ie9 div.orbit-wrapper div.slider-nav span.right {
+  background: url("../images/foundation/orbit/right-arrow-small.png");
+}
+
+/* line 87, ../sass/app.scss */
+.lt-ie9 div.orbit-wrapper div.slider-nav span.left {
+  background: url("../images/foundation/orbit/left-arrow-small.png");
+}

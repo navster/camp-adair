@@ -45,3 +45,45 @@
 // @import "foundation/components/modules/orbit";
 // @import "foundation/components/modules/reveal";
 // @import "foundation/components/modules/offcanvas";
+
+body {
+	background: url('../images/retina_wood.png') repeat;
+}
+#wrapper {
+	background: #eee;
+}
+
+// orbit customizations
+div.orbit-wrapper span.rotator {
+  background: url('../images/foundation/orbit/rotator-black.png') no-repeat;
+}
+
+div.orbit-wrapper span.mask.move {
+	background: url('../images/foundation/orbit/timer-black.png') repeat 0 0;
+}
+
+div.orbit-wrapper span.pause {
+	background: url('../images/foundation/orbit/pause-black.png') no-repeat;
+}
+
+div.orbit-wrapper span.pause.active {
+	background: url('../images/foundation/orbit/pause-black.png') no-repeat 0 -40px;
+}
+
+div.orbit-wrapper div.slider-nav span.right {
+  background: url('../images/foundation/orbit/right-arrow.png');
+  background-size: 100%;	
+}
+
+div.orbit-wrapper div.slider-nav span.left {
+	background: url('../images/foundation/orbit/left-arrow.png');
+	background-size: 100%;
+}
+
+.lt-ie9 div.orbit-wrapper div.slider-nav span.right {
+	background: url('../images/foundation/orbit/right-arrow-small.png');
+}
+
+.lt-ie9 div.orbit-wrapper div.slider-nav span.left {
+	background: url('../images/foundation/orbit/left-arrow-small.png');
+}
