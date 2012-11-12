@@ -15,7 +15,8 @@ if wasGood
   puts "Enter your commit message:"
   commit = gets.chomp
   system('cd ..')
-  cmd = "git add . && git commit -a -m '#{commit}' && push origin master"
+  system("git add . && git commit -a -m '#{commit}'")
+  exec("git push origin master")
   exec(cmd)
 else
   puts "Failed for whatever reason. Check that you can run mysqldump manually like so:\nmysqldump --add-drop-table -h #{host} -u #{user} -p #{db} > ../db_export.sql"
