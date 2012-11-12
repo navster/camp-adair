@@ -1,5 +1,5 @@
 <?php
-function open_framework_preprocess_page(&$vars) {
+function aut_preprocess_page(&$vars) {
   // Add page template suggestions based on the aliased path. For instance, if the current page has an alias of about/history/early, we'll have templates of:
   // page-about-history-early.tpl.php, page-about-history.tpl.php, page-about.tpl.php
   // Whichever is found first is the one that will be used.
@@ -17,15 +17,16 @@ function open_framework_preprocess_page(&$vars) {
   $main_menu_tree = menu_tree_all_data('main-menu');
 
   // Add the rendered output to the $main_menu_expanded variables
-  $vars['main_menu_expanded'] = menu_tree_output($main_menu_tree);
+  //$vars['main_menu_expanded'] = menu_tree_output($main_menu_tree);
+  $vars['main_menu_expanded'] = aut_return_menu_markup('main-menu');
   
   // Search Toggle
   $vars['search'] = FALSE;
   if(theme_get_setting('toggle_search') && module_exists('search'))
-  $vars['search'] = drupal_get_form('open_framework_search_form');
+  $vars['search'] = drupal_get_form('aut_search_form');
 }
 
-function open_framework_preprocess_block(&$vars) {
+function aut_preprocess_block(&$vars) {
   // Count number of blocks in a given theme region
 $vars['block_count'] = count(block_list($vars['block']->region));
 }
@@ -40,7 +41,7 @@ $vars['block_count'] = count(block_list($vars['block']->region));
 * TRUE if the region has at least one block. FALSE if it doesn't.
 */
 
-function open_framework_region_has_block($region) {
+function aut_region_has_block($region) {
   $number_of_blocks = count(block_list($region));
   if ($number_of_blocks > 0) {
     return TRUE;
@@ -51,7 +52,7 @@ function open_framework_region_has_block($region) {
 }
 
 /* Status Messages (Error, Status, Alert) */
-function open_framework_status_messages($display = NULL) {
+function aut_status_messages($display = NULL) {
   $output = '';
   foreach (drupal_get_messages($display) as $type => $messages) {
 if ($type == "error") {$alert = 'alert alert-error';}
@@ -74,7 +75,7 @@ if ($type == "error") {$alert = 'alert alert-error';}
 }
 
 /* Search Form */
-function open_framework_search_form($form, &$form_state) {
+function aut_search_form($form, &$form_state) {
   // Get custom search form
   $form = search_form($form, $form_state);
 
@@ -90,4 +91,24 @@ function open_framework_search_form($form, &$form_state) {
   unset($form['basic']);
 
   return $form;
+}
+
+function aut_return_menu_markup($menu_name, $attributes)
+{
+    $items = array();
+    $menu_tree = menu_tree_all_data($menu_name);
+    $menu_tree_output = menu_tree_output($menu_tree);
+
+    foreach($menu_tree_output as $item_id => $item_data)
+    {
+        if(is_numeric($item_id) && is_array($item_data))
+        {
+            $items[] = l('<span>' . $item_data['#title'] . '</span>', $item_data['#href'], array(
+                    'attributes'    => $item_data['#attributes'],
+                    'html'      => TRUE,
+                )
+            );
+        }
+    }
+    return theme('item_list', array('items' => $items, 'type' => 'ul'));
 }

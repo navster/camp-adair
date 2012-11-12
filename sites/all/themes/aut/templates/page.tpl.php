@@ -1,4 +1,3 @@
-<?php if ($main_menu): ?>
   <div class='row'>
     <div class="twelve columns">
       <nav class="top-bar">
@@ -17,29 +16,11 @@
       </nav>
     </div>
   </div>
-<?php endif; ?>
 
 <div id="main" class="clearfix">
   <div class="container">
-    <div class="row">
-      <div class="span12">
-        <div id="myCarousel" class="carousel slide">
-          <!-- Carousel items -->
-          <div class="carousel-inner">
-            <div class="active item"><img src="http://placekitten.com/1170/300"/></div>
-            <div class="item"><img src="http://placekitten.com/1170/300"/></div>
-            <div class="item"><img src="http://placekitten.com/1170/300"/></div>
-            <div class="item"><img src="http://placekitten.com/1170/300"/></div>
-            <div class="item"><img src="http://placekitten.com/1170/300"/></div>
-          </div>
-          <!-- Carousel nav -->
-          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-        </div>
-      </div>
-    </div>    
     <div id="main-content" class="row">
-      <div id="content" class="<?php if (($page['sidebar_first']) && ($page['sidebar_second'])): print 'span6'; elseif (($page['sidebar_first']) || ($page['sidebar_second'])): print 'span9'; else: print 'span12'; endif; ?>">
+      <div id="content">
         <div id="content-wrapper">
           <div id="content-head" class="row-fluid">
             <div id="highlighted" class="clearfix"><?php print render($page['highlighted']); ?></div>
@@ -53,9 +34,6 @@
             <?php endif; ?>
             <?php if ($messages): ?>
             <div id="console" class="clearfix"><?php print $messages; ?></div>
-            <?php endif; ?>
-            <?php if ($page['help']): ?>
-            <div id="help" class="clearfix"> <?php print render($page['help']); ?> </div>
             <?php endif; ?>
             <?php if ($action_links): ?>
             <ul class="action-links">
