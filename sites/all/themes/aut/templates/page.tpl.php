@@ -1,20 +1,22 @@
 <?php if ($main_menu): ?>
-<div id="main-menu" class="clearfix">
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class='container'>
-        <a class='brand' href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
-        <?php if ($search): ?>
-        <div id="nav-search">
-          <?php if ($search): print render($search); endif; ?>
-        </div>
-        <?php endif; ?>
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-        <div class="nav-collapse"><?php print render($main_menu_expanded); ?></div>
-      </div><!-- /.container -->
-    </div><!-- /.navbar-inner -->
-  </div><!-- /.navbar -->
-</div><!-- /#main-menu -->
+  <div class='row'>
+    <div class="twelve columns">
+      <nav class="top-bar">
+        <ul>
+          <!-- Title Area -->
+          <li class='name'><h1><a href='#'><?php print $site_name; ?></a></h1></li>
+          <li class="toggle-topbar"><a href="#"></a></li>
+        </ul>
+
+        <section>
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <?php print render($main_menu_expanded); ?>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
 <?php endif; ?>
 
 <div id="main" class="clearfix">
@@ -67,28 +69,16 @@
             </ul>
             <?php endif; ?>
           </div>
-          <?php if ($page['content_top']): ?>
-          <div id="content-top" class="row-fluid"> <?php print render($page['content_top']); ?> </div>
-          <?php endif; ?>
-          <?php if ($page['content_upper']): ?>
-          <div id="content-upper" class="row-fluid"> <?php print render($page['content_upper']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content']) || ($feed_icons)): ?>
+          <?php if (($page['content']) : ?>
           <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
-          <?php endif; ?>
-          <?php if ($page['content_lower']): ?>
-          <div id="content-lower" class="row-fluid"> <?php print render($page['content_lower']); ?> </div>
-          <?php endif; ?>
-          <?php if ($page['content_bottom']): ?>
-          <div id="content-bottom" class="row-fluid"> <?php print render($page['content_bottom']); ?> </div>
           <?php endif; ?>
         </div>
         <!-- /#content-wrap -->
       </div>
       <!-- /#content -->
-      <?php if ($page['sidebar_second']): ?>
+      <?php if ($page['sidebar']): ?>
       <div id="sidebar-second" class="sidebar span3">
-        <div class="row-fluid"><?php print render($page['sidebar_second']); ?></div>
+        <div class="row-fluid"><?php print render($page['sidebar']); ?></div>
       </div>
       <!-- /#sidebar-second -->
       <?php endif; ?>
