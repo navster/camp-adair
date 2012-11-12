@@ -112,3 +112,52 @@ function aut_return_menu_markup($menu_name, $attributes)
     }
     return theme('item_list', array('items' => $items, 'type' => 'ul'));
 }
+
+/**
+ * Return the top level Management Menu
+ * @param $menu_name
+ *   The name of the menu structure you would like to return
+ * @return
+ *   An array of top-level menu links that belong to the passed in $menu_name
+ */
+function aut_get_menu($menu_name) {
+  if ($menu_name) {
+    return db_query('SELECT link_title, link_path, has_children, weight, mlid FROM {menu_links} WHERE menu_name = :name AND depth = 2 ORDER BY weight', array(':name' => $menu_name))->fetchAll();
+  }
+  return NULL;
+}
+
+/**
+ * Builds a navbar for any passed in menu
+ * @param $menu_name
+ *   The name of the menu you would like to build a navbar from
+ * @return
+ *   The dom structure for a navbar from the passed in menu name
+ **/
+function aut_build_navbar($menu_name) {
+  if ($menu_name) {
+    global $user;
+    global $base_url;
+  
+    $items = BaseBuildingBlocks_get_menu($menu_name);
+    
+    $output = '';
+    foreach ($items as $item) {
+      if ($item->link_title == 'Help' || $item->link_title == 'Tasks' || $item->link_title == 'Dashboard') {}
+      elseif ($item->has_children == 1) {
+        $output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
+        foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
+          $output .= '<li><a href="'.$base_url.'/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
+        }
+        $output .= '</ul></li>';
+        } 
+        else {
+          $output .= '<li><a href="'.$base_url.'/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
+      }
+    }
+  }
+  else {
+    $output = NULL;
+  }
+  return $output;
+}
