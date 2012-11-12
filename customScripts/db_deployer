@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+
+#help
+if ARGV[0] == "-h"
+  print "use as:\n./db_deployer > sites/default/settings.php\n"
+else
+puts "Which environment are you installing drupal to?\n1: AppFog\n2: Localhost\nEnter the corresponding number:"
+drupal_env = gets.chomp
+if drupal_env == "1"
+puts <<STRING
+<?php
+$services = getenv('VCAP_SERVICES'); 
+$services_json = json_decode($services,true); 
+$mysql_config = $services_json["mysql-5.1"][0]["credentials"]; 
+$databases['default']['default'] = array(
+  'driver' => 'mysql',
+  'database' => $mysql_config["name"],
+  'username' => $mysql_config["user"],
+  'password' => $mysql_config["password"],
+  'host' => $mysql_config["hostname"],
+  'port' => $mysql_config["port"],
+);
+  $update_free_access = FALSE;
+  $drupal_hash_salt = 'Wp5UFccJZ2E7GWJvOpAgYgVctRALw-hAvMvI3FJTRWY';
+  ini_set('session.gc_probability', 1);
+  ini_set('session.gc_divisor', 100);
+  ini_set('session.gc_maxlifetime', 200000);
+  ini_set('session.cookie_lifetime', 2000000);
+
+  $conf['404_fast_paths_exclude'] = '/\/(?:styles)\//';
+  $conf['404_fast_paths'] = '/\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
+  $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
+STRING
+else
+#grab console input
+puts "Enter database name:"
+db = gets.chomp
+puts "Enter user:"
+user = gets.chomp
+puts "Enter user password:"
+pass = gets.chomp
+puts "Enter mysql host:"
+host = gets.chomp  
+puts <<STRING
+  <?php
+  $databases = array (
+    'default' => 
+    array (
+      'default' => 
+      array (
+        'database' => '#{db}',
+        'username' => '#{user}',
+        'password' => '#{pass}',
+        'host' => '#{host}',
+        'port' => '',
+        'driver' => 'mysql',
+        'prefix' => '',
+      ),
+    ),
+  );
+  $update_free_access = FALSE;
+  $drupal_hash_salt = 'Wp5UFccJZ2E7GWJvOpAgYgVctRALw-hAvMvI3FJTRWY';
+  ini_set('session.gc_probability', 1);
+  ini_set('session.gc_divisor', 100);
+  ini_set('session.gc_maxlifetime', 200000);
+  ini_set('session.cookie_lifetime', 2000000);
+
+  $conf['404_fast_paths_exclude'] = '/\/(?:styles)\//';
+  $conf['404_fast_paths'] = '/\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
+  $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
+STRING
+end
+end
