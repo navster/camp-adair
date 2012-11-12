@@ -26,5 +26,10 @@
   <?php print $page; ?>
   <!-- Final closing markup from any modules that have altered the page. This variable should always be output last, after all other dynamic content -->
   <?php print $page_bottom; ?>
+  <script type="text/javascript">
+  $(function(){
+    $('#slider').orbit();
+  })
+  </script>
 </body>
 </html>

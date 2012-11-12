@@ -1,6 +1,6 @@
   <div class='row'>
     <div class="twelve columns">
-      <nav class="top-bar fixed">
+      <nav class="top-bar">
         <ul>
           <!-- Title Area -->
           <li class='name'><h1><a href='#'><?php print $site_name; ?></a></h1></li>
@@ -19,13 +19,23 @@
             <li><a href='#'>Group Bookings</a></li>
             <li><a href='#'>Services and Facilities</a></li>
             <li><a href='#'>Make a Booking</a></li>
-            
-            
           </ul>
         </section>
       </nav>
     </div>
   </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <div id="slider">
+        <img src="<?php echo base_path() . path_to_theme() ?>/images/slide1.jpg" />
+        <img src="<?php echo base_path() . path_to_theme() ?>/images/slide2.jpg" />
+        <img src="<?php echo base_path() . path_to_theme() ?>/images/slide3.jpg" />
+      </div>
+
+      <hr />
+    </div>
+  </div>  
 
 <div id="main" class="clearfix">
   <div class="container">
