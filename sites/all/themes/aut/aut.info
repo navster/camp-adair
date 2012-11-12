@@ -28,6 +28,11 @@ scripts[] = javascripts/foundation/app.js
 
 regions[sidebar] = Sidebar
 regions[content] = Content: Body
+
+regions[home_featured] = Home: feature block
+regions[home_featured_box_one] = Home: feature one
+regions[home_featured_box_two] = Home: feature two
+regions[home_featured_box_three] = Home: feature three
 regions[footer] = Footer
 regions[highlighted] = Highlighted
 regions[help] = Help
