@@ -11,26 +11,8 @@
         }
       ?>
       <?php include 'includes/page-header.php'; ?>
-          <?php if (($page['content'])): ?>
-            <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?></div>
-          <?php endif; ?>
-        
-            <div class="row">
-              <div class="twelve columns">
-                <div class="panel">
-                  <h4>Get in touch and make a booking!</h4>
-                  <div class="row">
-                    <div class="nine columns">
-                      <p>We'd love to hear from you!</p>
-                    </div>
-                    <div class="three columns">
-                      <a href="#" class="radius button right">Contact Us</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+      <?php if ($page['content']): print render($page['content']); endif ?>
+      <?php if (drupal_is_front_page()): include 'includes/page-calltoaction.php'; endif ?>
         
     </div><!-- /#content -->  
     <div id="sidebar" class="three columns">
