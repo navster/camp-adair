@@ -40,42 +40,50 @@
   </div>  
 
   <div class='row' id='main'>
-    
-      <div class='eight columns'id="content">
-        <div id="content-wrapper">
-          <div id="content-head" class="row-fluid">
-            <div id="highlighted" class="clearfix"><?php print render($page['highlighted']); ?></div>
-            <?php print render($title_prefix); ?>
-            <?php if ($title): ?>
+    <div class='eight columns'id="content">
+        <div id="content-head">     
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
             <h1 class="title" id="page-title"> <?php print $title; ?> </h1>
-            <?php endif; ?>
-            <?php print render($title_suffix); ?>
-            <?php if ($tabs): ?>
-            <div class="tabs"> <?php print render($tabs); ?> </div>
-            <?php endif; ?>
-            <?php if ($messages): ?>
-            <div id="console" class="clearfix"><?php print $messages; ?></div>
-            <?php endif; ?>
-            <?php if ($action_links): ?>
-            <ul class="action-links">
-              <?php print render($action_links); ?>
-            </ul>
-            <?php endif; ?>
-          </div>
-          <?php if (($page['content'])): ?>
-          <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?></div>
           <?php endif; ?>
-        </div>
-        <!-- /#content-wrap -->
-      </div>
-      <!-- /#content -->
+          <?php print render($title_suffix); ?>
+          <?php if ($tabs): ?>
+          <div class="tabs"> <?php print render($tabs); ?> </div>
+          <?php endif; ?>
+          <?php if ($messages): ?>
+          <div id="console" class="clearfix"><?php print $messages; ?></div>
+          <?php endif; ?>
+          <?php if ($action_links): ?>
+          <ul class="action-links">
+            <?php print render($action_links); ?>
+          </ul>
+          <?php endif; ?>
+          <?php if (($page['content'])): ?>
+            <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?></div>
+          <?php endif; ?>
+        
+            <div class="row">
+              <div class="twelve columns">
+                <div class="panel">
+                  <h4>Get in touch and make a booking!</h4>
+                  <div class="row">
+                    <div class="nine columns">
+                      <p>We'd love to hear from you!</p>
+                    </div>
+                    <div class="three columns">
+                      <a href="#" class="radius button right">Contact Us</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-      <div id="sidebar" class="three columns">
-        <div class="row-fluid"><?php print render($page['sidebar']); ?></div>
-      </div>
-      <!-- /#sidebar -->
+        </div><!-- /#content-head -->
+    </div><!-- /#content -->  
+    <div id="sidebar" class="three columns">
+      <div class="row-fluid"><?php print render($page['sidebar']); ?></div>
+    </div><!-- /#sidebar -->
   </div>
-</div>
 </div>
 <div id="footer" class="clearfix">
   <div class="container">

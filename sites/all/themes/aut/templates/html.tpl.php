@@ -28,7 +28,11 @@
   <?php print $page_bottom; ?>
   <script type="text/javascript">
   $(function(){
-    $('#slider').orbit();
+    $('#slider').orbit({
+      animation: 'fade',
+      timer: true,
+      directionalNav: false
+    });
   })
   </script>
 </body>
