@@ -1,0 +1,29 @@
+name = AUT Project
+description = AUT R and D Project theme for Camp Adair.
+core = 7.x
+version = 1.0
+
+stylesheets[all][] = stylesheets/app.css
+scripts[] = javascripts/foundation/modernizr.foundation.js
+scripts[] = javascripts/foundation/jquery.js
+scripts[] = javascripts/foundation/jquery.cookie.js
+scripts[] = javascripts/foundation/jquery.event.move.js
+scripts[] = javascripts/foundation/jquery.event.swipe.js
+scripts[] = javascripts/foundation/jquery.foundation.accordion.js
+scripts[] = javascripts/foundation/jquery.foundation.alerts.js
+scripts[] = javascripts/foundation/jquery.foundation.buttons.js
+scripts[] = javascripts/foundation/jquery.foundation.forms.js
+scripts[] = javascripts/foundation/jquery.foundation.joyride.js
+scripts[] = javascripts/foundation/jquery.foundation.clearing.js
+scripts[] = javascripts/foundation/jquery.foundation.magellan.js
+scripts[] = javascripts/foundation/jquery.foundation.mediaQueryToggle.js
+scripts[] = javascripts/foundation/jquery.foundation.navigation.js
+scripts[] = javascripts/foundation/jquery.foundation.orbit.js
+scripts[] = javascripts/foundation/jquery.foundation.reveal.js
+scripts[] = javascripts/foundation/jquery.foundation.tabs.js
+scripts[] = javascripts/foundation/jquery.foundation.tooltips.js
+scripts[] = javascripts/foundation/jquery.foundation.topbar.js
+scripts[] = javascripts/foundation/jquery.placeholder.js
+scripts[] = javascripts/foundation/app.js
+
+regions[sidebar] = Sidebar
