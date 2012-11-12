@@ -5,8 +5,11 @@
 
   <div class='row' id='main'>
     <div class='eight columns'id="content">
-        
-      <?php include 'includes/page-featured.php'; ?>
+      <?php 
+        if (drupal_is_front_page()) { 
+          include 'includes/page-featured.php';
+        }
+      ?>
       <?php include 'includes/page-header.php'; ?>
           <?php if (($page['content'])): ?>
             <div id="content-body" class="row-fluid"> <?php print render($page['content']); ?></div>
