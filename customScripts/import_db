@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+puts "We are now updating your local database with an up-to-date version pulled from the repo\n"
+puts "Be sure mysql is in your $PATH or this will fail\n"
+puts "Enter database name:"
+db = gets.chomp
+puts "Enter mysql host:"
+host = gets.chomp
+puts "Enter user:"
+user = gets.chomp
+cmd = "mysql -h #{host} -u #{user} -p #{db} < ../db_export.sql"
+wasGood = system(cmd)
+if wasGood
+  puts "Great that's done."
+  exec(cmd)
+else
+  puts "Failed for whatever reason. Check that you can run mysqldump manually like so:\nmysqldump --add-drop-table -h #{host} -u #{user} -p #{db} > ../db_export.sql"
+end
+
