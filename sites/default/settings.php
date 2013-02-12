@@ -4,7 +4,7 @@
     array (
       'default' => 
       array (
-        'database' => 'drupal',
+        'database' => 'ca',
         'username' => 'root',
         'password' => 'root',
         'host' => 'localhost',
